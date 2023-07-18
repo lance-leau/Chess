@@ -1,0 +1,33 @@
+# Rider files
+.idea/
+*.sln.iml
+*.iml
+/.idea/workspace.xml
+/.idea/tasks.xml
+/.idea/dictionaries
+
+# Compiled output
+/bin/
+/obj/
+
+# Local application configuration
+/appsettings.json
+
+# Packages folder
+/packages/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.bak
+*.cache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+*/[Oo]bj/
