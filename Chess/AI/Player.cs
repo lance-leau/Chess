@@ -72,8 +72,6 @@ public class Player
 
     public virtual (Cell, Cell) getMove(Board board)
     {
-        Console.Clear();
-        board.PrettyPrint();
         Console.WriteLine("What piece do you want to move? <letter><number>");
         string input = Console.ReadLine();
         if (string.IsNullOrEmpty(input))
