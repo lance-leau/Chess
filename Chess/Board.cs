@@ -103,9 +103,9 @@ public class Board
             Console.WriteLine($"{destCell._Piece._Color} lost there king and lost the game.");
         }
 
-            // if pawn is moving two cells
         if (sourceCell._Piece is Pawn pawn)
         {
+            // if pawn is moving two cells
             if (Math.Abs(sourceCell._Row - destCell._Row) == 2)
             {
                 pawn._CanBeOnPassant = true;
@@ -113,6 +113,17 @@ public class Board
             else
             {
                 pawn._CanBeOnPassant = false;
+            }
+            // if pawn reaches last/first row, promote him (queen by default)
+            if (destCell._Row == 0 || destCell._Row == 7)
+            {
+                // remove the pawn from the player's pieces
+                sourceCell._Piece._Board._game.getPlayerByColor(sourceCell._Piece._Color).removePiece(sourceCell._Piece);
+                
+                Queen queen = new Queen(sourceCell._Piece._Color, sourceCell._Piece._Board, sourceCell);
+                // add the queen to the the player's pieces
+                sourceCell._Piece._Board._game.getPlayerByColor(sourceCell._Piece._Color).addPiece(queen);
+                sourceCell._Piece = queen;
             }
         }
 

@@ -103,4 +103,10 @@ public class Game
 
         return ret;
     }
+
+    public Player getPlayerByColor(Piece.Color color)
+    {
+        if (this._player1._Color == color) return _player1;
+        else return _player2;
+    }
 }
